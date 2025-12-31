@@ -1,0 +1,16 @@
+[Unit]
+Description=Cloudflare Tunnel client
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/root/Argo/cloudflared tunnel --url localhost: --edge-ip-version auto --no-autoupdate --protocol http2
+WorkingDirectory=/root/Argo
+Restart=always
+RestartSec=10
+User=root
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
