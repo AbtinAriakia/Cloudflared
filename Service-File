@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/root/Argo/cloudflared-linux-amd64 tunnel --url localhost: --edge-ip-version auto --no-autoupdate --protocol http2
-WorkingDirectory=/root/Argo
+ExecStart=/root/cfolder/cloudflared-linux-amd64 tunnel --url localhost: --edge-ip-version auto --no-autoupdate --protocol http2
+WorkingDirectory=/root/cfolder
 Restart=always
 RestartSec=10
 User=root
