@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/root/cfolder/cloudflared tunnel --url localhost: run argotun
+ExecStart=/root/cfolder/cloudflared tunnel --url localhost:8443 run argotun
 Restart=always
 RestartSec=5
 User=root
