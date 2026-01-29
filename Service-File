@@ -1,16 +1,14 @@
 [Unit]
-Description=Cloudflare Tunnel client
+Description=Cloudflare Argo Tunnel
 After=network.target
 
 [Service]
 Type=simple
-ExecStart=/root/cfolder/cloudflared-linux-amd64 tunnel --url localhost: --edge-ip-version auto --no-autoupdate --protocol http2 --loglevel info
-WorkingDirectory=/root/cfolder
+ExecStart=/root/cfolder/cloudflared tunnel --url localhost: run argotun
 Restart=always
-RestartSec=10
+RestartSec=5
 User=root
-StandardOutput=journal
-StandardError=journal
+WorkingDirectory=/root/cfolder
 
 [Install]
 WantedBy=multi-user.target
